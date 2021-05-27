@@ -48,7 +48,7 @@ CREATE TABLE public.job_seekers
     PRIMARY KEY (id)
 );
 
-CREATE TABLE public.system_staff
+CREATE TABLE public.system_workers
 (
     id integer NOT NULL,
     first_name character varying(50) NOT NULL,
@@ -98,7 +98,7 @@ ALTER TABLE public.job_seekers
     NOT VALID;
 
 
-ALTER TABLE public.system_staff
+ALTER TABLE public.system_workers
     ADD FOREIGN KEY (user_id)
     REFERENCES public.users (id)
     NOT VALID;
