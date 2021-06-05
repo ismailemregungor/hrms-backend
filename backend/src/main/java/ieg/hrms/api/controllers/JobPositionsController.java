@@ -1,8 +1,8 @@
 package ieg.hrms.api.controllers;
 
 import java.util.List;
-
 import ieg.hrms.core.utilities.results.DataResult;
+import ieg.hrms.core.utilities.results.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ieg.hrms.business.abstracts.JobPositionService;
@@ -20,9 +20,14 @@ public class JobPositionsController {
 		this.jobPositionService = jobPositionService;
 	}
 
-	@GetMapping("/getByPositionName")
-	public DataResult<List<JobPosition>> getByPositionName(@RequestParam String positionName){
-		return this.jobPositionService.getByPositionName(positionName);
+	@GetMapping("/getall")
+	public DataResult<List<JobPosition>> getAll(){
+		return this.jobPositionService.getAll();
+	}
+
+	@PostMapping("/add")
+	public Result add(@RequestBody JobPosition jobPosition){
+		return this.jobPositionService.add(jobPosition);
 	}
 
 }
