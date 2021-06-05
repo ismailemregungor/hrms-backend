@@ -1,10 +1,14 @@
 package ieg.hrms.business.abstracts;
 
-import java.util.List;
+import ieg.hrms.core.utilities.results.DataResult;
+import ieg.hrms.core.utilities.results.Result;
 import ieg.hrms.entities.concretes.JobPosition;
+import java.util.List;
 
 public interface JobPositionService {
 
-	List<JobPosition> getAll();
-	
+	DataResult<List<JobPosition>> getAll();
+	Result add(JobPosition jobPosition);
+	DataResult<JobPosition> getByPositionName(String title);
+
 }
