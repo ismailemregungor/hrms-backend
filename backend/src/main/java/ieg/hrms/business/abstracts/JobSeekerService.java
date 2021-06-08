@@ -11,4 +11,8 @@ public interface JobSeekerService {
 
     Result add(JobSeeker jobSeeker);
 
+    //Result update(JobSeeker jobSeeker);
+
+    //Result delete(JobSeeker jobSeeker);
+
 }
