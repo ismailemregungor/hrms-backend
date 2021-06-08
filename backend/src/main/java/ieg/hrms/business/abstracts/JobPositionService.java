@@ -8,7 +8,7 @@ import java.util.List;
 public interface JobPositionService {
 
 	DataResult<List<JobPosition>> getAll();
+
 	Result add(JobPosition jobPosition);
-	DataResult<JobPosition> getByPositionName(String title);
 
 }
