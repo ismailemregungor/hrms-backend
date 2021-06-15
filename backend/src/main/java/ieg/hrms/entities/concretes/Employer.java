@@ -1,11 +1,16 @@
 package ieg.hrms.entities.concretes;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdverts"})
 @EqualsAndHashCode(callSuper = false)
 @Data
 @AllArgsConstructor
@@ -22,5 +27,8 @@ public class Employer extends User {
 
 	@Column(name = "phone_number")
 	private String phoneNumber;
+
+	@OneToMany(mappedBy = "employer")
+	private List<JobAdvert> jobAdverts;
 
 }
