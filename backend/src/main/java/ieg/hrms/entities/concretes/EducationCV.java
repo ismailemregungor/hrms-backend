@@ -12,7 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Entity
-@Table(name = "job_seeker_cv_educations")
+@Table(name = "job_seekers_education_cv")
 public class EducationCV {
 
     @Column(name = "id")
@@ -24,13 +24,13 @@ public class EducationCV {
     private String schoolName;
 
     @Column(name = "department_name")
-    private String departmentType;
+    private String departmentName;
 
-    @Column(name = "start_name")
+    @Column(name = "star_date")
     private Date startDate;
 
-    @Column(name = "graduation_date")
-    private Date graduationDate;
+    @Column(name = "end_date")
+    private Date endDate;
 
     @ManyToOne()
     @JoinColumn(name = "job_seeker_id")
