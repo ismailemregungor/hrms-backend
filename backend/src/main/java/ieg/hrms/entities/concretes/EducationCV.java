@@ -26,10 +26,10 @@ public class EducationCV {
     @Column(name = "department_name")
     private String departmentName;
 
-    @Column(name = "star_date")
+    @Column(name = "start_date")
     private Date startDate;
 
-    @Column(name = "end_date")
+    @Column(name = "end_date", nullable = true)
     private Date endDate;
 
     @ManyToOne()
