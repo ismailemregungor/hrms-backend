@@ -22,8 +22,8 @@ public class ImageCV {
     @Column(name = "image_url")
     private String imageUrl;
 
-    @ManyToOne()
-    @JoinColumn(name = "job_seeker_id")
+    @OneToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "job_seeker_id", referencedColumnName = "user_id")
     private JobSeeker jobSeeker;
 
 }
