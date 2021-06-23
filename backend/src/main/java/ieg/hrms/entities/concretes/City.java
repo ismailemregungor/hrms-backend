@@ -1,14 +1,13 @@
 package ieg.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import javax.persistence.*;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "jobAdverts"})
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -16,13 +15,16 @@ import javax.persistence.Table;
 @Table(name = "cities")
 public class City {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     private int id;
 
-
     @Column(name = "city_name")
     private String cityName;
+
+    @OneToMany(mappedBy = "city")
+    private List<JobAdvert> jobAdverts;
 
 
 }
