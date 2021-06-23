@@ -23,10 +23,13 @@ public class ExperienceCV {
     @Column(name = "workplace_name")
     private String workplaceName;
 
-    @Column(name = "star_date")
+    @Column(name = "ex_position_name")
+    private String exPositionName;
+
+    @Column(name = "start_date")
     private Date startDate;
 
-    @Column(name = "end_date")
+    @Column(name = "end_date", nullable = true)
     private Date endDate;
 
     @ManyToOne()
