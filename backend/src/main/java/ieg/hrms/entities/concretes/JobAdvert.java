@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -34,10 +34,10 @@ public class JobAdvert {
     private boolean isJobPositionActive;
 
     @Column(name = "creation_date")
-    private Date creationDate;
+    private LocalDate creationDate;
 
     @Column(name = "expiration_date")
-    private Date expirationDate;
+    private LocalDate expirationDate;
 
     @ManyToOne
     @JoinColumn(name = "job_position_id")
