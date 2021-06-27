@@ -5,12 +5,10 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import java.util.List;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "jobAdverts"})
-@EqualsAndHashCode(callSuper = false)
 @PrimaryKeyJoinColumn(name = "user_id")
 @Data
 @AllArgsConstructor
@@ -29,6 +27,6 @@ public class Employer extends User {
     private String phoneNumber;
 
     @OneToMany(mappedBy = "employer")
-    private List<JobAdvert> jobAdverts;
+    private List<JobAdvert> jobAdvert;
 
 }
