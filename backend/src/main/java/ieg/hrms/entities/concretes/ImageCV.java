@@ -26,4 +26,5 @@ public class ImageCV {
     @JoinColumn(name = "job_seeker_id", referencedColumnName = "user_id")
     private JobSeeker jobSeeker;
 
+
 }
