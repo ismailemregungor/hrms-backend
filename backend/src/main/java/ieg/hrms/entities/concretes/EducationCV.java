@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -27,10 +27,10 @@ public class EducationCV {
     private String departmentName;
 
     @Column(name = "start_date")
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name = "end_date", nullable = true)
-    private Date endDate;
+    private LocalDate endDate;
 
     @ManyToOne()
     @JoinColumn(name = "job_seeker_id")
