@@ -1,6 +1,6 @@
 package ieg.hrms.entities.concretes;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -26,7 +26,7 @@ public class JobSeeker extends User {
     private String nationalIdNo;
 
     @Column(name = "date_of_birth")
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @JsonIgnore
     @OneToMany(mappedBy = "jobSeeker")
@@ -49,7 +49,7 @@ public class JobSeeker extends User {
     private List<LinkCV> linkCV;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "jobSeeker", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "jobSeeker")
     private List<CoverLetterCV> coverLetterCV;
 
     @JsonIgnore
