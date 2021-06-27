@@ -7,4 +7,6 @@ public interface JobPositionDao extends JpaRepository<JobPosition, Integer> {
 
     JobPosition getById(int id);
 
+    JobPosition getByPositionName(String positionName);
+
 }
