@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.Range;
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @Data
 @NoArgsConstructor
@@ -23,7 +24,8 @@ public class LanguageCV {
     @Column(name = "language")
     private String language;
 
-    @Range(min = 1, max = 6)
+    @Min(value = 1)
+    @Max(value = 5)
     @Column(name = "language_level")
     private int languageLevel;
 
