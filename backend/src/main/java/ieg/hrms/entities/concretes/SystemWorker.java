@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +23,13 @@ public class SystemWorker extends User {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "authority_name")
+    private String authorityName;
+
+    @Min(value = 1)
+    @Max(value = 3)
+    @Column(name = "authority_level")
+    private int authorityLevel;
 
 }
