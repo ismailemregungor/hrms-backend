@@ -28,5 +28,5 @@ public class LinkCV {
     @ManyToOne()
     @JoinColumn(name = "job_seeker_id")
     private JobSeeker jobSeeker;
-    
+
 }
