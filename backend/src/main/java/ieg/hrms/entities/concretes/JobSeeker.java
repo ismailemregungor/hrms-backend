@@ -53,7 +53,7 @@ public class JobSeeker extends User {
     private List<CoverLetterCV> coverLetterCV;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "jobSeeker", optional = false, fetch = FetchType.LAZY)
-    private ImageCV imageCV;
+    @OneToMany(mappedBy = "jobSeeker")
+    private List<ImageCV> imageCV;
 
 }
