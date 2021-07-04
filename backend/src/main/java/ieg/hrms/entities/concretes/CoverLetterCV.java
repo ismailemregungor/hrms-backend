@@ -1,12 +1,13 @@
 package ieg.hrms.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "job_seekers_cover_letter_cv")
 public class CoverLetterCV {
@@ -20,14 +21,7 @@ public class CoverLetterCV {
     private String content;
 
     @ManyToOne()
-    @JsonIgnore
     @JoinColumn(name = "job_seeker_id")
     private JobSeeker jobSeeker;
-
-    public CoverLetterCV(String content, int jobSeekerId) {
-        super();
-        this.content = content;
-        this.jobSeeker.setId(jobSeekerId);
-    }
 
 }
