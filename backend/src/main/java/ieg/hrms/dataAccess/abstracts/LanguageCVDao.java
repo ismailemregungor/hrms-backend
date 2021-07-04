@@ -6,10 +6,8 @@ import java.util.List;
 
 public interface LanguageCVDao extends JpaRepository<LanguageCV, Integer> {
 
-
     LanguageCV getById(int id);
 
     List<LanguageCV> getByJobSeekerId(int id);
-
 
 }
