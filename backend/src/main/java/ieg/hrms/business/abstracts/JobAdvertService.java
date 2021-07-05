@@ -8,16 +8,21 @@ import java.util.List;
 public interface JobAdvertService {
 
     Result add(JobAdvert jobAdvert);
-    //Result upddate(JobAdvert jobAdvert);
-    //Result delete(JobAdvert jobAdvert);
-    Result activateJobAdvert(int id);
-    Result deactivateJobAdvert(int id);
+
+    Result update(JobAdvert jobAdvert);
+
+    Result delete(int id);
+
+    DataResult<List<JobAdvert>> getAll();
 
     DataResult<JobAdvert> getById(int id);
-    DataResult<List<JobAdvert>> getAll();
-    DataResult<List<JobAdvert>> getAllOpenJobAdverts();
-    DataResult<List<JobAdvert>> getAllOpenJobAdvertsByDate();
-    DataResult<List<JobAdvert>> getAllOpenJobAdvertsByEmployer(int id);
 
+    Result changeActiveToPassive(int id);
+
+    DataResult<List<JobAdvert>> getActiveJobAdverts();
+
+    DataResult<List<JobAdvert>> getActiveJobAdvertsByDate();
+
+    DataResult<List<JobAdvert>> getActiveJobAdvertsByEmployer(int id);
 
 }
