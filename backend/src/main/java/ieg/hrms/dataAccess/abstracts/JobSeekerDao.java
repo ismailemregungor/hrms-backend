@@ -7,6 +7,6 @@ public interface JobSeekerDao extends JpaRepository<JobSeeker, Integer> {
 
     JobSeeker getById(int id);
 
-    JobSeeker findJobSeekerByNationalIdNo(String nationalIdNo);
+    JobSeeker getJobSeekerByNationalIdNo(String nationalIdNo);
 
 }
