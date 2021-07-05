@@ -7,8 +7,14 @@ import java.util.List;
 
 public interface EmployerService {
 
+    Result add(Employer employer);
+
+    Result update(Employer employer);
+
+    Result delete(int id);
+
     DataResult<List<Employer>> getAll();
 
-    Result add(Employer employer);
+    DataResult<Employer> getById(int id);
 
 }
