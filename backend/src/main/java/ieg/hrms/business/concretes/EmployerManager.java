@@ -18,7 +18,26 @@ public class EmployerManager implements EmployerService {
 
     @Autowired
     public EmployerManager(EmployerDao employerDao) {
+        super();
         this.employerDao = employerDao;
+    }
+
+    @Override
+    public Result add(Employer employer) {
+        this.employerDao.save(employer);
+        return new SuccessResult("Employer has added.");
+    }
+
+    @Override
+    public Result update(Employer employer) {
+        this.employerDao.save(employer);
+        return new SuccessResult("Employer has updated.");
+    }
+
+    @Override
+    public Result delete(int id) {
+        this.employerDao.deleteById(id);
+        return new SuccessResult("Employer has deleted.");
     }
 
     @Override
@@ -27,8 +46,7 @@ public class EmployerManager implements EmployerService {
     }
 
     @Override
-    public Result add(Employer employer) {
-        this.employerDao.save(employer);
-        return new SuccessResult("Employer added successfully.");
+    public DataResult<Employer> getById(int id) {
+        return new SuccessDataResult<Employer>(this.employerDao.getById(id));
     }
 }
