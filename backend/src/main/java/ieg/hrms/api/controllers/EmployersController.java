@@ -16,17 +16,32 @@ public class EmployersController {
 
     @Autowired
     public EmployersController(EmployerService employerService) {
+        super();
         this.employerService = employerService;
     }
 
-    @GetMapping("/getall")
-    public DataResult<List<Employer>> getAll(){
-        return this.employerService.getAll();
-    }
-
     @PostMapping("/add")
-    public Result add(@RequestBody Employer employer){
+    public Result add(@RequestBody Employer employer) {
         return this.employerService.add(employer);
     }
 
+    @PostMapping("/update")
+    public Result update(@RequestBody Employer employer) {
+        return this.employerService.update(employer);
+    }
+
+    @PostMapping("/delete")
+    public Result delete(@RequestParam("id") int id) {
+        return this.employerService.delete(id);
+    }
+
+    @GetMapping("/getAll")
+    public DataResult<List<Employer>> getAll() {
+        return this.employerService.getAll();
+    }
+
+    @GetMapping("/getById")
+    public DataResult<Employer> getById(@RequestParam("id") int id) {
+        return this.employerService.getById(id);
+    }
 }
